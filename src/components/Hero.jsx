@@ -1,15 +1,22 @@
-import Spline from '@splinetool/react-spline'
+import React, { lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
+
+const HeroScene = lazy(() => import('./HeroScene.jsx'))
 
 function Hero() {
   return (
     <section className="relative min-h-[92vh] overflow-hidden">
+      {/* 3D background */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/UngO8SNLfLcyPG7O/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" /> }>
+          <HeroScene />
+        </Suspense>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/40 to-slate-950 pointer-events-none"></div>
+      {/* Gradient overlay for contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-slate-950/40 to-slate-950 pointer-events-none"></div>
 
+      {/* Foreground content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 pb-24">
         <div className="max-w-3xl">
           <motion.div
