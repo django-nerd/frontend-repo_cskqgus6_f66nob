@@ -7,5 +7,3 @@
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.71.151:3000/
-10:36:35 AM [vite] ✨ new dependencies optimized: @react-three/fiber, @react-three/drei, three
-10:36:35 AM [vite] ✨ optimized dependencies changed. reloading
